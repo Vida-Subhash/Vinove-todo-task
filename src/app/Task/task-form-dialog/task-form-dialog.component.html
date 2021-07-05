@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Add Task</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="example-form" [formGroup]="myForm" novalidate>
+    <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label> Title</mat-label>
+      <input formControlName="title" matInput placeholder="Task title" >
+      <mat-error *ngIf="errorHandling('title', 'required')">
+        You must provide a <strong>Title</strong>
+      </mat-error>
+    </mat-form-field><br>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea  formControlName="description" matInput placeholder="Enter description"></textarea>
+      <mat-error *ngIf="errorHandling('description', 'required')">
+        You must provide a <strong>Description</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="submit()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
