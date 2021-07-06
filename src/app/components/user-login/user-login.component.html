@@ -1,8 +1,9 @@
 <div class="container">
+  {{data|json}}
   <mat-card>
     <mat-card-header>
       <div  class="example-header-image"></div>
-      <mat-card-title>User Registation</mat-card-title>
+      <mat-card-title>Login</mat-card-title>
     </mat-card-header>
   <form [formGroup]="myForm" #f="ngForm" (ngSubmit)="submitForm()" novalidate>
     <!-- Email -->

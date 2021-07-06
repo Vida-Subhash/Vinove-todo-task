@@ -35,11 +35,11 @@ export class UserRegistationComponent implements OnInit {
 
 
   submitForm() {
-    console.log(this.myForm.value);
-    this.userModal.name = this.myForm.value.name;
-    this.userModal.email = this.myForm.value.email;
-    this.userModal.password = this.myForm.value.password;
-    this.authService.postUser(this.userModal).subscribe( res => {
+    // console.log(this.myForm.value);
+    // this.userModal.name = this.myForm.value.name;
+    // this.userModal.email = this.myForm.value.email;
+    // this.userModal.password = this.myForm.value.password;
+    this.authService.postUser(this.myForm.value).subscribe( res => {
       console.log(res);
       this.myForm.reset();
       this.router.navigateByUrl('user-login');

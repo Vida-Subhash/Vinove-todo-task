@@ -1,22 +1,22 @@
 {
   "users": [
-
+    {
+      "name": "jhbb hmn ",
+      "email": "subhash.ramshetti9768@gmail.com",
+      "password": "Subhash1234",
+      "id": 1
+    }
   ],
   "todo": [
     {
-      "title": "jhbb hmn ",
-      "description": "gfhfghgfhgfhgfhfgh hgfh fhhgf hfg ghf gh gfh fghgfhgf fghhgf",
+      "title": "Work",
+      "description": "Work done within 5hrs\n",
       "id": 1
     },
     {
-      "title": "subhash.ramshetti9768@gmail.com",
-      "description": "gfhgfhgfh gfhgf hf hgfhfghfg hf hf hfg h f",
+      "title": "home",
+      "description": "homework",
       "id": 2
-    },
-    {
-      "title": "scsdcsdc sd dsd ",
-      "description": "sdcdsc c sdc csdcsdcsdcsdc",
-      "id": 3
     }
   ]
 }

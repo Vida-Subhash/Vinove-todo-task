@@ -23,5 +23,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button (click)="submit()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+  <button mat-raised-button [disabled]="!myForm.valid" (click)="submit()" [mat-dialog-close]="true" >Submit</button>
 </mat-dialog-actions>

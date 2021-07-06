@@ -1,19 +1,19 @@
 .container {
-  height: 100vh;
+  height: 90vh;
 }
 
 .btn {
   display: flex;
   align-items: center;
   height: 10vh;
-  padding-left: 50px;
+  padding-left: 20px;
 }
 
 .task-container {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 .example-container {
 

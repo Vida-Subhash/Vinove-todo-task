@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { TaskService } from 'src/app/services/tast/task.service';
+import { TaskService } from 'src/app/services/task/task.service';
 
 @Component({
   selector: 'app-task-form-dialog',
@@ -26,12 +26,12 @@ export class TaskFormDialogComponent implements OnInit  {
     return this.myForm.controls[control].hasError(error);
   }
 submit() {
-  // let taskData = {
-  //   title: this.myForm.value.title,
-  //   description:  this.myForm.value.description,
-  // }
+  let taskData = {
+    title: this.myForm.value.title,
+    description:  this.myForm.value.description,
+  }
   //  console.log( taskData);
-   this.tastService.createTask(this.myForm.value).subscribe( res => {
+   this.tastService.createTask(taskData).subscribe( res => {
      console.log(res);
    })
 }

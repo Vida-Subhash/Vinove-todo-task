@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+
+<div class="container">
+
+    <div class="toolbar">
+          <p>
+            <mat-toolbar color="primary">
+              <span>Todo App</span>
+              <span class="example-spacer"></span>
+              <button *ngIf="isLoggedIn" (click)="backToHome()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>logout</mat-icon>
+              </button>
+            </mat-toolbar>
+          </p>
+    </div>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+</div>

@@ -6,17 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { UserLoginComponent } from './Auth/user-login/user-login.component';
-import { UserRegistationComponent } from './Auth/user-registation/user-registation.component';
-import { TodoTaskComponent } from './Task/todo-task/todo-task.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegistationComponent } from './components/user-registation/user-registation.component';
+import { TodoTaskComponent } from './components/todo-task/todo-task.component';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TaskFormDialogComponent } from './Task/task-form-dialog/task-form-dialog.component';
+import { TaskFormDialogComponent } from './components/task-form-dialog/task-form-dialog.component';
 import { AuthGaurdService } from './services/auth-guard/auth-guard.service';
 import { InterceptorService } from './services/interceptor/interceptor.service';
 import { AuthService } from './services/auth/auth.service';
-import { TaskService } from './services/tast/task.service';
+import { TaskService } from './services/task/task.service';
 
 @NgModule({
   declarations: [

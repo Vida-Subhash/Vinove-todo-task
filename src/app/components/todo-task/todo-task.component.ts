@@ -2,34 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
 import { TaskFormDialogComponent } from '../task-form-dialog/task-form-dialog.component';
+import { TaskService } from 'src/app/services/task/task.service';
 
 @Component({
   selector: 'app-todo-task',
   templateUrl: './todo-task.component.html',
   styleUrls: ['./todo-task.component.css']
 })
-export class TodoTaskComponent {
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
-  inprogress = [
-    'Go home',
-    'Fall asleep'
-  ];
+export class TodoTaskComponent implements OnInit {
+  todo:any[] =[];
+  inprogress:any[] = [];
+  done:any[] = [];
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
-
-  constructor(public dialog: MatDialog) { }
-
+  constructor(
+    public dialog: MatDialog,
+    private taskService:TaskService) { }
+ ngOnInit() {
+      this.taskService.getAllTask().subscribe( res => {
+          this.todo = res;
+          // this.inprogress = res;
+          console.log(res);
+      })
+ }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
