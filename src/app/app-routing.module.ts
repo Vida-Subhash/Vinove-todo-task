@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'task',
     component: TodoTaskComponent,
-    // canActivate: [AuthGaurdService]
+    canActivate: [AuthGaurdService]
   },
    {
      path:'**',

@@ -11,17 +11,20 @@
 
 .task-container {
   height: 80vh;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 10px;
+}
+
+.title-text{
+  font-weight: 500;
 }
 .example-container {
-
-  width: 400px;
-  max-width: 100%;
+  display: grid;
+  grid-template-rows: 50px repeat(1, 1fr);
   margin: 0 25px 25px 0;
-  display: inline-block;
-  vertical-align: top;
+  /* display: inline-block; */
+  /* vertical-align: top; */
 
 }
 
@@ -38,10 +41,6 @@
   padding: 20px 10px;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between; */
   box-sizing: border-box;
   cursor: move;
   background: white;

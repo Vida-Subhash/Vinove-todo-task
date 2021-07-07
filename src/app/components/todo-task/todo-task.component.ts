@@ -18,11 +18,12 @@ export class TodoTaskComponent implements OnInit {
     public dialog: MatDialog,
     private taskService:TaskService) { }
  ngOnInit() {
+        this.taskService.taskData.subscribe( res => {
+          this.todo.push(res);
+        })
       this.taskService.getAllTask().subscribe( res => {
           this.todo = res;
-          // this.inprogress = res;
-          console.log(res);
-      })
+      });
  }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -38,9 +39,6 @@ export class TodoTaskComponent implements OnInit {
     const dialogRef = this.dialog.open(TaskFormDialogComponent, {
       height: '300px',
       width: '600px',
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
   }
 

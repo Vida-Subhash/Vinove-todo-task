@@ -24,5 +24,6 @@ constructor(
   backToHome() {
       this.router.navigateByUrl('user-login');
       this.authService.isLoggedIn.next(false);
+      // localStorage.removeItem("token");
   }
 }

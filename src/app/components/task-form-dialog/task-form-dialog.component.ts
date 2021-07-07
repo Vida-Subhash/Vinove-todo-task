@@ -11,17 +11,16 @@ export class TaskFormDialogComponent implements OnInit  {
   myForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private tastService: TaskService
+    private taskService: TaskService
   ) { }
   ngOnInit(): void {
-    this.reactiveForm();
-  }
-  reactiveForm() {
+
     this.myForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(3),]],
       description: ['', [Validators.required, Validators.maxLength(500)]]
-    })
+    });
   }
+
   public errorHandling = (control: string, error: string) => {
     return this.myForm.controls[control].hasError(error);
   }
@@ -31,9 +30,9 @@ submit() {
     description:  this.myForm.value.description,
   }
   //  console.log( taskData);
-   this.tastService.createTask(taskData).subscribe( res => {
-     console.log(res);
-   })
+   this.taskService.createTask(taskData).subscribe( res => {
+    //  console.log(res);
+   });
 }
 
 }
